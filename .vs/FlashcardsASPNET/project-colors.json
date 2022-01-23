@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e242abe6-1144-4306-88ef-05c5b0bf09f6": {
+      "ProjectGuid": "e242abe6-1144-4306-88ef-05c5b0bf09f6",
+      "DisplayName": "FlashcardsASPNET",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FlashcardsASPNET.Data;
 using FlashcardsASPNET.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FlashcardsASPNET.Controllers
 {
@@ -57,6 +58,8 @@ namespace FlashcardsASPNET.Controllers
         }
 
         // GET: Cards/Create
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -65,6 +68,7 @@ namespace FlashcardsASPNET.Controllers
         // POST: Cards/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CardQuestion,CardAnswer")] Card card)
@@ -79,6 +83,7 @@ namespace FlashcardsASPNET.Controllers
         }
 
         // GET: Cards/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,6 +102,7 @@ namespace FlashcardsASPNET.Controllers
         // POST: Cards/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CardQuestion,CardAnswer")] Card card)
@@ -130,6 +136,7 @@ namespace FlashcardsASPNET.Controllers
         }
 
         // GET: Cards/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,6 +155,7 @@ namespace FlashcardsASPNET.Controllers
         }
 
         // POST: Cards/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
