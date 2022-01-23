@@ -26,6 +26,18 @@ namespace FlashcardsASPNET.Controllers
             return View(await _context.Card.ToListAsync());
         }
 
+        // GET: Cards/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // POST: Cards/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.Card.Where( c => c.CardQuestion.Contains(SearchPhrase) ).ToListAsync());
+        }
+
         // GET: Cards/Details/5
         public async Task<IActionResult> Details(int? id)
         {
